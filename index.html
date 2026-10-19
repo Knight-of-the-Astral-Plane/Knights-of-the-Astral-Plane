@@ -3,141 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f1e9">
-  <title>Knights of the Astral Plane — One more throw.</title>
-  <meta name="description" content="A knight. A mountain lake. One more throw. Discover Knights of the Astral Plane, an atmospheric stone-skipping game for Android. Offline, with no ads or accounts.">
+  <meta name="theme-color" content="#090d13">
+  <title>Knights of the Astral Plane</title>
+  <meta name="description" content="A knight. A mountain lake. One more throw. An atmospheric stone-skipping game for Android. Offline. No ads. No accounts.">
   <link rel="canonical" href="https://knight-of-the-astral-plane.github.io/Knights-of-the-Astral-Plane/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Knights of the Astral Plane">
-  <meta property="og:description" content="A knight. A lake. One more throw. A weird little fantasy skill game for Android.">
+  <meta property="og:description" content="A knight. A mountain lake. One more throw.">
   <meta property="og:url" content="https://knight-of-the-astral-plane.github.io/Knights-of-the-Astral-Plane/">
-  <meta property="og:image" content="https://knight-of-the-astral-plane.github.io/Knights-of-the-Astral-Plane/Knight%20of%20the%20astral%20plane_titelbild.jpg">
-  <meta property="og:image:width" content="840">
-  <meta property="og:image:height" content="1492">
-  <meta property="og:image:alt" content="Knights of the Astral Plane. A duck-headed knight beside an alpine lake.">
+  <meta property="og:image" content="https://knight-of-the-astral-plane.github.io/Knights-of-the-Astral-Plane/assets/astral-night.webp">
+  <meta property="og:image:width" content="820">
+  <meta property="og:image:height" content="1435">
+  <meta property="og:image:alt" content="A duck-headed knight beneath the strange night sky of the Astral Plane.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/stone-icon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/stone-touch-icon.png">
+  <link rel="preload" href="assets/UnifrakturMaguntia-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <script src="site.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=night2">
+  <script src="site.js?v=night2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header page-width" id="top">
-    <a class="brand" href="./" aria-label="Knights of the Astral Plane home">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><ellipse cx="24" cy="31" rx="21" ry="10"/><ellipse cx="24" cy="31" rx="13" ry="5"/><path d="M28 9c5-2 10-1 11 2s-2 6-7 7-10 1-11-2 2-5 7-7Z" fill="currentColor" stroke="none"/><path d="m18 19-5 4m1-10-5 1"/></svg>
-      <span>Knights of the<br><strong>Astral Plane</strong></span>
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a class="nav-game" href="#game">The game</a>
-      <a href="#film">The film <span aria-hidden="true">↗</span></a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-  </header>
-
+  <header class="site-header" id="top"><nav aria-label="Main navigation"><a href="privacy.html">Privacy</a></nav></header>
   <main id="main">
-    <section class="hero page-width" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-world"><img src="assets/astral-night.webp" width="820" height="1435" alt="An armoured, duck-headed knight beside a mountain lake, beneath a swirling night sky." fetchpriority="high"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> A strange little Android game</p>
-        <h1 id="hero-title">A knight. <br>A lake. <br>One more <br><span class="last-word">throw.<svg viewBox="0 0 340 36" fill="none" aria-hidden="true"><path d="M5 24C96 4 241 2 329 15M22 31c90-11 184-15 259-12"/></svg></span></h1>
-        <p class="hero-description">Skip stones across the Astral Plane. Find your rhythm. Chase the perfect throw. Forget what time it is.</p>
-        <div class="hero-actions">
-          <a class="button button-dark" href="#film"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z" fill="currentColor"/></svg> Watch the film</a>
-          <a class="text-link" href="#game">Meet the game <span aria-hidden="true">↓</span></a>
-        </div>
-        <p class="release-note">Coming to Google Play <span aria-hidden="true">·</span> Android</p>
+        <p class="release-note">An Android game from the other side</p>
+        <h1 id="hero-title"><span class="title-knights">Knights</span><span class="title-of"> of the </span><span class="title-plane">Astral Plane</span></h1>
+        <p class="hero-whisper">A knight. A mountain lake.<br><span>One more throw.</span></p>
       </div>
-      <figure class="hero-art">
-        <div class="hero-orbit" aria-hidden="true"></div>
-        <div class="hero-photo"><img src="Knight%20of%20the%20astral%20plane_titelbild.jpg" width="840" height="1492" alt="An armoured, duck-headed knight resting beside a blue alpine lake, surrounded by mountains and little towers of stones." fetchpriority="high"></div>
-        <figcaption><span>A quiet lake. An unlikely knight.</span><span class="image-index" aria-hidden="true">01 / ∞</span></figcaption>
-      </figure>
+      <a class="scroll-cue" href="#game"><span>Down by the water</span><span aria-hidden="true">↓</span></a>
     </section>
-
-    <div class="promise-strip page-width" aria-label="Game features">
-      <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13a9 9 0 0 1 16 0M7 16a6 6 0 0 1 10 0m-6 3h2M4 4l16 16"/></svg> Entirely offline</span>
-      <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m6 6 12 12"/></svg> No ads. No subscriptions.</span>
-      <span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 12V8a5 5 0 0 1 10 0v4M5 12h14v9H5Z"/><circle cx="12" cy="16.5" r=".8" fill="currentColor"/></svg> No accounts. Just play.</span>
-    </div>
-
     <section class="game-section page-width" id="game" aria-labelledby="game-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">01 / The game</p><h2 id="game-title">Less swordplay.<br>More stone skipping.</h2></div>
-        <p class="section-description">A weird little fantasy skill game about an aspiring knight and a very good reason to stay by the water. A circular movement builds your spin. A swipe sends your stone on its way.</p>
-      </div>
+      <div class="game-intro"><h2 id="game-title">The art of a<br><span>good throw.</span></h2><p>Find a stone. Build up spin with a circular movement of your finger, then swipe to throw. Find the balance between spin, power, and curve. Then try just once more.</p></div>
       <div class="screenshot-grid">
-        <figure class="game-shot">
-          <a class="shot-button" href="screenshot_05.jpg" data-image="screenshot_05.jpg" data-caption="Find your stone. Every good throw begins at your feet." aria-label="Enlarge screenshot: find your stone">
-            <img src="screenshot_05.jpg" width="720" height="1462" alt="Looking down at a bed of pebbles, with the knight’s orange webbed feet and a choice of skipping stones." loading="lazy" decoding="async">
-            <span class="expand-icon" aria-hidden="true">↗</span>
-          </a>
-          <figcaption><span class="step-number">01</span><div><h3>Find your stone.</h3><p>Great things start small.</p></div></figcaption>
-        </figure>
-        <figure class="game-shot">
-          <a class="shot-button" href="screenshot_03.jpg" data-image="screenshot_03.jpg" data-caption="Find your rhythm. Build up spin with a circular finger movement." aria-label="Enlarge screenshot: build your spin">
-            <img src="screenshot_03.jpg" width="720" height="1463" alt="An armoured hand building up a green circle of spin above a lake at sunset." loading="lazy" decoding="async">
-            <span class="expand-icon" aria-hidden="true">↗</span>
-          </a>
-          <figcaption><span class="step-number">02</span><div><h3>Find your rhythm.</h3><p>A little spin goes a long way.</p></div></figcaption>
-        </figure>
-        <figure class="game-shot">
-          <a class="shot-button" href="screenshot_04.jpg" data-image="screenshot_04.jpg" data-caption="Let it fly. Swipe to send your stone skipping across the water." aria-label="Enlarge screenshot: make your throw">
-            <img src="screenshot_04.jpg" width="720" height="1462" alt="A stone skipping over a wintry lake, leaving a pale ripple beneath the low sun." loading="lazy" decoding="async">
-            <span class="expand-icon" aria-hidden="true">↗</span>
-          </a>
-          <figcaption><span class="step-number">03</span><div><h3>Let it fly.</h3><p>That feeling when it all clicks.</p></div></figcaption>
-        </figure>
-        <figure class="game-shot">
-          <a class="shot-button" href="screenshot_06.jpg" data-image="screenshot_06.jpg" data-caption="Take it all in. A mountain lake, a stone in your hand, and another throw waiting." aria-label="Enlarge screenshot: the mountain lake">
-            <img src="screenshot_06.jpg" width="720" height="1462" alt="A stone held in a steel gauntlet, overlooking a still mountain lake beneath dramatic golden clouds." loading="lazy" decoding="async">
-            <span class="expand-icon" aria-hidden="true">↗</span>
-          </a>
-          <figcaption><span class="step-number">04</span><div><h3>Take it all in.</h3><p>Then, naturally, throw again.</p></div></figcaption>
-        </figure>
+        <figure class="game-shot shot-lake"><a class="shot-button" href="screenshot_06.jpg" data-image="screenshot_06.jpg" data-caption="A stone in your hand. A mountain lake. Another throw waiting." aria-label="Enlarge the mountain lake screenshot"><img src="screenshot_06.jpg" width="720" height="1462" alt="A stone in a steel gauntlet above a still lake, beneath golden clouds and mountains." loading="lazy" decoding="async"></a><figcaption>The quiet before.</figcaption></figure>
+        <figure class="game-shot shot-stone"><a class="shot-button" href="screenshot_05.jpg" data-image="screenshot_05.jpg" data-caption="Find a stone. Every throw begins at your feet." aria-label="Enlarge the stone search screenshot"><img src="screenshot_05.jpg" width="720" height="1462" alt="Pebbles, a choice of skipping stones, and the knight’s bright orange webbed feet." loading="lazy" decoding="async"></a><figcaption>Something worth throwing.</figcaption></figure>
+        <figure class="game-shot shot-winter"><a class="shot-button" href="screenshot_04.jpg" data-image="screenshot_04.jpg" data-caption="A stone skipping across a winter lake." aria-label="Enlarge the winter lake screenshot"><img src="screenshot_04.jpg" width="720" height="1462" alt="A pale ripple and a skipping stone over a misty, wintry lake." loading="lazy" decoding="async"></a><figcaption>A moment on the water.</figcaption></figure>
+        <figure class="game-shot shot-sunset"><a class="shot-button" href="screenshot_03.jpg" data-image="screenshot_03.jpg" data-caption="Build up spin with a circular finger movement, then swipe to throw." aria-label="Enlarge the sunset screenshot"><img src="screenshot_03.jpg" width="720" height="1463" alt="An armoured hand building up a green circle of spin over a lake at sunset." loading="lazy" decoding="async"></a><figcaption>And one more.</figcaption></figure>
       </div>
-      <p class="gallery-note"><span aria-hidden="true">↗</span> A few moments from the game. Tap a view to step closer.</p>
     </section>
-
-    <section class="film-section" id="film" aria-labelledby="film-title">
-      <div class="film-inner page-width">
-        <div class="film-copy">
-          <p class="eyebrow">02 / A glimpse of the other side</p>
-          <h2 id="film-title">A little <br>strange.<br><em>Rather <br>beautiful.</em></h2>
-          <p>Mountains, mist, a suit of armour. And someone who takes stone skipping just a little too seriously.</p>
-          <div class="film-meta"><span class="status-dot" aria-hidden="true"></span><span>The official film</span><span>00:19</span></div>
+    <section class="film-section" id="film" aria-label="A film from the Astral Plane">
+      <div class="film-landscape" aria-hidden="true"></div>
+      <div class="film-content">
+        <h2>Beyond<br>the shore.</h2>
+        <div class="video-frame">
+          <video id="trailer" controls playsinline preload="metadata" poster="assets/trailer-poster.webp" width="404" height="720" aria-label="Knights of the Astral Plane trailer" aria-describedby="film-description"><source src="Knights_of_the_Astral_Plane_now_available.mp4" type="video/mp4">Your browser does not support embedded video. <a href="Knights_of_the_Astral_Plane_now_available.mp4">Watch the film.</a></video>
+          <button class="sound-button" id="sound-button" type="button" hidden>Sound on <span aria-hidden="true">♪</span></button>
+          <button class="video-play" id="video-play" type="button" hidden>Play film <span aria-hidden="true">▷</span></button>
         </div>
-        <div class="film-stage">
-          <div class="film-orbit orbit-one" aria-hidden="true"></div><div class="film-orbit orbit-two" aria-hidden="true"></div>
-          <div class="video-frame">
-            <video id="trailer" controls playsinline preload="metadata" poster="assets/trailer-poster.webp" width="404" height="720" aria-label="Knights of the Astral Plane official trailer" aria-describedby="film-description">
-              <source src="Knights_of_the_Astral_Plane_now_available.mp4" type="video/mp4">
-              Your browser does not support embedded video. <a href="Knights_of_the_Astral_Plane_now_available.mp4">Watch or download the film.</a>
-            </video>
-          </div>
-          <p class="video-caption">Sound on. Stay a little longer. <span aria-hidden="true">↗</span></p>
-        </div>
-        <p class="visually-hidden" id="film-description">A short fantasy trailer featuring an armoured knight with a duck’s head, a skipping stone, and a misty mountain lake. It closes with the game title. The controls and game features are described in the text on this page.</p>
+        <p class="visually-hidden" id="film-description">A short fantasy film featuring an armoured knight with a duck’s head, a skipping stone, and a misty mountain lake. Playback begins when the film comes into view and pauses when it leaves. Sound starts automatically where your browser allows it; otherwise use Sound on. Native video controls remain available.</p>
       </div>
     </section>
-
-    <section class="privacy-section page-width" id="privacy" aria-labelledby="privacy-title">
-      <div class="privacy-intro"><p class="eyebrow">03 / Room to breathe</p><h2 id="privacy-title">A quiet corner<br>of your phone.</h2><p>No advertising breaks. No sign-up. Just you, a handful of stones, and the water.</p><a class="text-link" href="privacy.html">Read the privacy policy <span aria-hidden="true">↗</span></a></div>
-      <div class="privacy-details">
-        <div><span class="detail-number">01</span><h3>Go off the grid.</h3><p>The game works entirely offline. No accounts, cloud services, or subscriptions.</p></div>
-        <div><span class="detail-number">02</span><h3>Keep your own story.</h3><p>Progress and settings stay on your device. No tracking, analytics, or personal data collection.</p></div>
-        <div class="contact-row"><span>Questions, thoughts, a particularly good throw?</span><a href="mailto:knightoftheastralplane@gmail.com">Say hello <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
+    <section class="closing page-width" aria-labelledby="closing-title"><h2 id="closing-title">Stay a little longer.</h2><p>A strange little stone-skipping game for Android.<br>Entirely offline. No ads, accounts, or subscriptions.</p><span class="coming-soon">Coming to Google Play</span></section>
   </main>
-
-  <footer class="site-footer page-width">
-    <a class="footer-title" href="#top">One more throw.<span aria-hidden="true">↗</span></a>
-    <div class="footer-bottom"><span>© 2026 Knights of the Astral Plane</span><span class="footer-status">Coming to Google Play</span><a href="privacy.html">Privacy policy</a><a href="mailto:knightoftheastralplane@gmail.com">Contact</a></div>
-  </footer>
-
-  <dialog class="image-dialog" id="image-dialog" aria-labelledby="image-caption">
-    <button class="dialog-close" type="button" aria-label="Close enlarged screenshot">Close <span aria-hidden="true">×</span></button>
-    <figure><img id="enlarged-image" src="screenshot_05.jpg" width="720" height="1462" alt=""><figcaption id="image-caption"></figcaption></figure>
-  </dialog>
+  <footer class="site-footer page-width"><span>© 2026 Knights of the Astral Plane</span><div><a href="privacy.html">Privacy policy</a><a href="mailto:knightoftheastralplane@gmail.com">Contact</a></div></footer>
+  <dialog class="image-dialog" id="image-dialog" aria-labelledby="image-caption"><button class="dialog-close" type="button" aria-label="Close enlarged screenshot">Close <span aria-hidden="true">×</span></button><figure><img id="enlarged-image" src="screenshot_05.jpg" width="720" height="1462" alt=""><figcaption id="image-caption"></figcaption></figure></dialog>
 </body>
 </html>
