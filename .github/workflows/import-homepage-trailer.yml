@@ -1,0 +1,48 @@
+name: Import approved homepage trailer
+on:
+  push:
+    branches: [homepage-media-import-20261019]
+    paths: [media-import/manifest.json]
+permissions:
+  contents: write
+jobs:
+  import-trailer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify and import the original trailer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, os, pathlib, urllib.request
+          root = pathlib.Path('media-import')
+          manifest = json.loads((root / 'manifest.json').read_text())
+          expected = 'fe1feb984e2cd852c2636bc6a861d0562b088e532688e6045b4d2e122b148c22'
+          chunks = []
+          for name in manifest['parts']:
+              if pathlib.Path(name).name != name or not name.endswith('.b64'):
+                  raise ValueError('Invalid media part')
+              chunks.append(base64.b64decode((root / name).read_text(), validate=True))
+          video = b''.join(chunks)
+          assert len(video) == 3307225, 'Unexpected trailer size'
+          assert hashlib.sha256(video).hexdigest() == expected, 'Trailer checksum mismatch'
+          payload = json.dumps({'content': base64.b64encode(video).decode(), 'encoding': 'base64'}).encode()
+          request = urllib.request.Request(
+              'https://api.github.com/repos/Knight-of-the-Astral-Plane/Knights-of-the-Astral-Plane/git/blobs',
+              data=payload,
+              headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                       'Accept': 'application/vnd.github+json',
+                       'Content-Type': 'application/json',
+                       'User-Agent': 'Knights-homepage-media-import'},
+              method='POST')
+          with urllib.request.urlopen(request, timeout=60) as response:
+              result = json.load(response)
+          assert result['sha'] == 'e77254983dca1b0dd92a6308952e20b575959bed', 'Git blob mismatch'
+          print('Original trailer imported and verified: ' + result['sha'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('Approved trailer imported without re-encoding. SHA-256 and Git blob SHA verified.\n')
+          PY
